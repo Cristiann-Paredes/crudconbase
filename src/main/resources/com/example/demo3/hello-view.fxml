@@ -46,17 +46,17 @@
             <TableColumn fx:id="CiudadColunm" prefWidth="90.0" text="CIUDAD" />
         </columns>
       </TableView>
-      <Button fx:id="btnUpdate" layoutX="167.0" layoutY="285.0" mnemonicParsing="false" onAction="#Update" prefHeight="45.0" prefWidth="102.0" style="-fx-background-color: #67FF62;" text="Update">
+      <Button fx:id="btnUpdate" layoutX="167.0" layoutY="285.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="102.0" style="-fx-background-color: #67FF62;" text="Update">
          <font>
             <Font name="Baskerville Old Face" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnDelete" layoutX="277.0" layoutY="285.0" mnemonicParsing="false" onAction="#Delete" prefHeight="45.0" prefWidth="102.0" style="-fx-background-color: #67FF62;" text="Delete">
+      <Button fx:id="btnDelete" layoutX="277.0" layoutY="285.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="102.0" style="-fx-background-color: #67FF62;" text="Delete">
          <font>
             <Font name="Baskerville Old Face" size="13.0" />
          </font>
       </Button>
-      <Button fx:id="btnAdd" layoutX="50.0" layoutY="285.0" mnemonicParsing="false" onAction="#Add" prefHeight="45.0" prefWidth="102.0" style="-fx-background-color: #67FF62;" text="Add">
+      <Button fx:id="btnAdd" layoutX="50.0" layoutY="285.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="102.0" style="-fx-background-color: #67FF62;" text="Add">
          <font>
             <Font name="Baskerville Old Face" size="13.0" />
          </font>
