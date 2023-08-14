@@ -3,7 +3,10 @@ module com.example.demo3 {
     requires javafx.fxml;
             
             requires com.dlsc.formsfx;
+    requires java.sql;
 
-    opens com.example.demo3 to javafx.fxml;
-    exports com.example.demo3;
+    opens com.registro to javafx.fxml;
+    exports com.registro;
+    exports com.registro.Controller;
+    opens com.registro.Controller to javafx.fxml;
 }

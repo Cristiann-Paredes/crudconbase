@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="com.registro.Controller.RegistroController">
+   <children>
+      <AnchorPane prefHeight="454.0" prefWidth="572.0">
+         <children>
+            <Label layoutX="219.0" layoutY="32.0" text="REGISTRO DE PERSONAS" />
+         </children>
+      </AnchorPane>
+   </children>
+</GridPane>
