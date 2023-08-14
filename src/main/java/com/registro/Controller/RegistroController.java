@@ -60,10 +60,12 @@ public class RegistroController implements Initializable {
     @FXML
     void Eliminar(ActionEvent event) {
 
+
     }
 
     @FXML
     void Guardar(ActionEvent event) {
+
 
     }
 
