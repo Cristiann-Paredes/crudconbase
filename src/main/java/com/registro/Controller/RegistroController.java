@@ -3,6 +3,7 @@ package com.registro.Controller;
 import com.registro.DAO.personaDAO;
 import com.registro.Model.persona;
 import com.registro.util.ConexionBD;
+import com.registro.util.Metodos;
 import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
@@ -19,11 +20,7 @@ import java.util.logging.Logger;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 
 public class RegistroController implements Initializable {
@@ -69,6 +66,8 @@ public class RegistroController implements Initializable {
 
 
 
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         columnCedula.setCellValueFactory(param -> param.getValue().cedulaProperty());
@@ -77,13 +76,26 @@ public class RegistroController implements Initializable {
         columnFecha.setCellValueFactory(param ->param.getValue().fechanacimientoProperty());
         listaPersona();
         tblregistro.setItems(listaPersona);
+        objPersona.bind(tblregistro.getSelectionModel().selectedItemProperty());
 
     }
 
     @FXML
-    void Eliminar(ActionEvent event) {
+    void Eliminar(ActionEvent event) throws SQLException {
 
-
+        if (objPersona.get()==null){
+            Metodos.rotaError(tblregistro);
+            return;
+        }
+        Alert a = new Alert(Alert.AlertType.CONFIRMATION,"QUIERES ELIMINAR ESTE REGISTRO??", ButtonType.YES,ButtonType.NO);
+        a.setHeaderText(this.objPersona.get().getCedula());
+        if (a.showAndWait().get()== ButtonType.YES);{
+            conexionBD.conectar();
+            PersonaDAO = new personaDAO(conexionBD);
+            PersonaDAO.delete(objPersona.get().getCedula());
+            listaPersona();
+            this.conexionBD.CERRAR();
+        }
     }
 
     @FXML

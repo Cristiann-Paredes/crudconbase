@@ -49,6 +49,11 @@ public class personaDAO {
         return lista;
     }
 
+    public void delete(String cedula) throws SQLException{
+        String sql= "DELETE FROM persona WHERE cedula= '" +cedula+"'";
+        conexionBD.GUARDAR(sql);
+    }
+
 
 
 
