@@ -9,7 +9,7 @@ public class ConexionBD {
     private Connection conexion;
     private Statement statement;
     private boolean conectado=false;
-    private static String IP= "localhost",PUERTO="5432",BD="registro",USER="root23",PASS="root23";
+    private static String IP= "localhost",PUERTO="5432",BD="registro",USER="postgres",PASS="root";
     public ConexionBD(){}
 
     public void conectar(){

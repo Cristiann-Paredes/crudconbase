@@ -22,14 +22,15 @@ public class personaDAO {
     public void guardar(persona p) throws SQLException{
 
         String sql = null;
-        if (!p.getCedula().equals("")){
-            sql= "INSET INTO public.persona"
-                    + "cedula, nombre,apellido, fechanacimiento"
-                    + "VALUE ('"+p.getCedula()+"','"+p.getNombre()+"','"+p.getApellido()+"','"+p.getFechanacimiento()+"');";
+        if (!p.getCedula().equals("")) {
+            sql = "INSERT INTO public.persona "
+                    + "(cedula, nombre, apellido, fechanacimiento) "
+                    + "VALUES ('" + p.getCedula() + "','" + p.getNombre() + "','" + p.getApellido() + "','" + p.getFechanacimiento() + "')";
         }
 
-        PreparedStatement pst= this.conexionBD.getConexion().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+        PreparedStatement pst = this.conexionBD.getConexion().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
         pst.executeUpdate();
+
     }
 
     public List<persona> getAll()throws SQLException{
