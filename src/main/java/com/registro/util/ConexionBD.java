@@ -43,7 +43,10 @@ public class ConexionBD {
         } catch (SQLException ex) {
             Logger.getLogger(ConexionBD.class.getName()).log(Level.SEVERE,null, ex);
         }
-
     }
+    public Connection getConexion(){
+        return conexion;
+    }
+
 }
 
